@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.project-list {
+  padding: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    h3 {
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .project-list {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .project-list {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
