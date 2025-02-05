@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Layout/Header";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
@@ -10,21 +11,23 @@ import "./styles/main.scss";
 
 const App = () => {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/uslugi" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/kontakt" element={<ContactPage />} />
-            <Route path="/o-nas" element={<AboutPage />} />
-          </Routes>
-        </main>
-        {/* Tutaj możesz dodać komponent Footer */}
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/uslugi" element={<ServicesPage />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/kontakt" element={<ContactPage />} />
+              <Route path="/o-nas" element={<AboutPage />} />
+            </Routes>
+          </main>
+          {/* Tutaj możesz dodać komponent Footer */}
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 

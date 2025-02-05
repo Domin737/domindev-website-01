@@ -1,9 +1,18 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "./AboutPage.scss";
 
 const AboutPage = () => {
   return (
     <div className="about-page">
+      <Helmet>
+        <title>O DominDev - Nasza Historia i Zespół</title>
+        <meta
+          name="description"
+          content="Poznaj historię DominDev, nasz zespół ekspertów i misję tworzenia innowacyjnych rozwiązań webowych dla naszych klientów."
+        />
+        <link rel="canonical" href="https://domindev.pl/o-nas" />
+      </Helmet>
       <h1>O DominDev</h1>
       <section className="about-section">
         <h2>Nasza misja</h2>

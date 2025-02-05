@@ -9,6 +9,7 @@
   h2 {
     margin-bottom: 3rem;
     color: $primary-color;
+    @include gradient-text($primary-color, $secondary-color);
   }
 
   .testimonial-slider {
@@ -25,7 +26,7 @@
     left: 0;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    @include transition(opacity, 0.5s, ease-in-out);
 
     &.active {
       opacity: 1;
@@ -60,10 +61,14 @@
       background-color: $text-color-light;
       margin: 0 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      @include transition(background-color, 0.3s, ease);
 
       &.active {
         background-color: $primary-color;
+      }
+
+      &:hover {
+        background-color: darken($text-color-light, 15%);
       }
     }
   }
@@ -75,4 +80,25 @@
       height: 180px;
     }
   }
+
+  @include respond-to(md) {
+    .testimonial-text {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial.active {
+  animation: fadeIn 0.5s ease-out;
 }
