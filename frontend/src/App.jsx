@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 import "./styles/main.scss";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/uslugi" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/kontakt" element={<ContactPage />} />
+            <Route path="/o-nas" element={<AboutPage />} />
           </Routes>
         </main>
         {/* Tutaj możesz dodać komponent Footer */}

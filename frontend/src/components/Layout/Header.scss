@@ -1,0 +1,125 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.main-header {
+  background-color: $background-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-left: 1.5rem;
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .hamburger {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: $text-color;
+        position: relative;
+        transition: background-color 0.3s ease;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 24px;
+          height: 2px;
+          background-color: $text-color;
+          transition: transform 0.3s ease;
+        }
+
+        &::before {
+          top: -6px;
+        }
+
+        &::after {
+          bottom: -6px;
+        }
+      }
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $background-color;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: scaleY(1);
+      }
+
+      li {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

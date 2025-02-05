@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="main-header">
       <nav>
         <div className="logo">DominDev</div>
-        <ul className="nav-links">
+        <button className="menu-toggle" onClick={toggleMenu}>
+          <span className="sr-only">Menu</span>
+          <span className="hamburger"></span>
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/">Strona główna</Link>
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              Strona główna
+            </Link>
           </li>
           <li>
-            <Link to="/uslugi">Usługi</Link>
+            <Link to="/uslugi" onClick={() => setIsMenuOpen(false)}>
+              Usługi
+            </Link>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/portfolio" onClick={() => setIsMenuOpen(false)}>
+              Portfolio
+            </Link>
           </li>
           <li>
-            <Link to="/kontakt">Kontakt</Link>
+            <Link to="/o-nas" onClick={() => setIsMenuOpen(false)}>
+              O nas
+            </Link>
+          </li>
+          <li>
+            <Link to="/kontakt" onClick={() => setIsMenuOpen(false)}>
+              Kontakt
+            </Link>
           </li>
         </ul>
       </nav>

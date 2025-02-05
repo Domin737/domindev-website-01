@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: $background-color-light;
+
+  h2 {
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .services-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .service-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 2.5rem;
+        color: $secondary-color;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      &:hover i {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    padding: 6rem 2rem;
+  }
+}

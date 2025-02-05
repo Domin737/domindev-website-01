@@ -1,14 +1,85 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .hero-section {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: white;
   text-align: center;
-  padding: 4rem 2rem;
-  background-color: #f0f0f0;
+  overflow: hidden;
+
+  .hero-content {
+    max-width: 800px;
+    @include fade-in(1s);
+  }
 
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    @include gradient-text(#ffffff, #e0e0e0);
   }
 
   p {
     font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: $primary-color;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    @include transition;
+    @include box-shadow(2);
+
+    &:hover {
+      @include hover-effect;
+    }
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 100%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @include respond-to(md) {
+    flex-direction: row;
+    text-align: left;
+
+    .hero-content {
+      flex: 1;
+      margin-right: 2rem;
+    }
+
+    .hero-image {
+      flex: 1;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }

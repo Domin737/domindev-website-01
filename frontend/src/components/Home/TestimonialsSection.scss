@@ -1,0 +1,78 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.testimonials-section {
+  padding: 4rem 2rem;
+  background-color: $background-color-light;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 3rem;
+    color: $primary-color;
+  }
+
+  .testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .testimonial-company {
+    font-size: 0.9rem;
+    color: $text-color-light;
+  }
+
+  .testimonial-dots {
+    margin-top: 2rem;
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $text-color-light;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    padding: 6rem 2rem;
+
+    .testimonial-slider {
+      height: 180px;
+    }
+  }
+}
