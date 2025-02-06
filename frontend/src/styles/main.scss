@@ -44,6 +44,11 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
 }
 
 .button {
@@ -59,12 +64,44 @@ a {
   &:hover {
     background-color: darken($primary-color, 10%);
   }
+
+  &:focus {
+    outline: 2px solid darken($primary-color, 20%);
+    outline-offset: 2px;
+  }
+}
+
+// Dostępność
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Kontrastowe kolory dla tekstu
+.text-contrast {
+  color: $text-color-contrast;
+}
+
+// Responsywne obrazy
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 // Importuj style komponentów
 @import "../components/Layout/Header";
+@import "../components/Layout/Footer";
 @import "../components/Home/HeroSection";
+@import "../components/Home/ServicesOverview";
 @import "../components/Projects/ProjectList";
 @import "../pages/ServicesPage";
 @import "../pages/PortfolioPage";
 @import "../pages/ContactPage";
+@import "../pages/AboutPage";

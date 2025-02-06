@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import PortfolioPage from "./pages/PortfolioPage";
@@ -24,7 +25,7 @@ const App = () => {
               <Route path="/o-nas" element={<AboutPage />} />
             </Routes>
           </main>
-          {/* Tutaj możesz dodać komponent Footer */}
+          <Footer />
         </div>
       </Router>
     </HelmetProvider>
