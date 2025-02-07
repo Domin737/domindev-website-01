@@ -1,4 +1,3 @@
-@import "sass:color";
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
@@ -69,7 +68,7 @@
       }
 
       &:hover {
-        background-color: darken($text-color-secondary, 15%);
+        background-color: #9a9ea3; // Zastąpiono darken($text-color-secondary, 15%) na #9a9ea3
       }
     }
   }
