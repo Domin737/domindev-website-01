@@ -1,0 +1,40 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.services-page {
+  padding: 2rem;
+
+  h1 {
+    @include section-title;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .service-item {
+      background-color: $background-color-light;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $text-color-secondary;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .service-icon {
+        font-size: 2rem;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

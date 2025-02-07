@@ -3,7 +3,7 @@
 
 .main-footer {
   background-color: $background-color-dark;
-  color: $text-color-light;
+  color: $text-color-contrast;
   padding: 3rem 0 1rem;
 
   .footer-content {
@@ -34,7 +34,7 @@
       }
 
       a {
-        color: $text-color-light;
+        color: $text-color-contrast;
         text-decoration: none;
         @include transition(color);
 
@@ -50,7 +50,7 @@
     gap: 1rem;
 
     a {
-      color: $text-color-light;
+      color: $text-color-contrast;
       text-decoration: none;
       @include transition(color);
 
@@ -64,7 +64,7 @@
     text-align: center;
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba($text-color-light, 0.1);
+    border-top: 1px solid rgba($text-color-contrast, 0.1);
 
     p {
       font-size: 0.9rem;

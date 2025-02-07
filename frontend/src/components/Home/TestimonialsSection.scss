@@ -1,3 +1,4 @@
+@import "sass:color";
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
@@ -47,7 +48,7 @@
 
   .testimonial-company {
     font-size: 0.9rem;
-    color: $text-color-light;
+    color: $text-color-secondary;
   }
 
   .testimonial-dots {
@@ -58,7 +59,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: $text-color-light;
+      background-color: $text-color-secondary;
       margin: 0 5px;
       cursor: pointer;
       @include transition(background-color, 0.3s, ease);
@@ -68,7 +69,7 @@
       }
 
       &:hover {
-        background-color: darken($text-color-light, 15%);
+        background-color: darken($text-color-secondary, 15%);
       }
     }
   }
