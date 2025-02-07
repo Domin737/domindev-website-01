@@ -1,0 +1,43 @@
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+.about-section h2 {
+  margin-bottom: 2rem;
+  color: #007bff;
+}
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.about-section .services-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.about-section .services-icons .service-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-section .services-icons .service-icon i {
+  font-size: 2.5rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.about-section .services-icons .service-icon span {
+  font-weight: bold;
+}
+.about-section .services-icons .service-icon:hover i {
+  transform: scale(1.1);
+}
+@media (min-width: 576px) {
+  .about-section {
+    padding: 6rem 2rem;
+  }
+}/*# sourceMappingURL=AboutSection.css.map */

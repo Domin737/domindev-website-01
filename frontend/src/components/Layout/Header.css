@@ -1,0 +1,105 @@
+.main-header {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.main-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+.main-header .menu-toggle {
+  display: none;
+}
+.main-header .nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.main-header .nav-links li {
+  margin-left: 1.5rem;
+}
+.main-header .nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.main-header .nav-links a:hover {
+  color: #007bff;
+}
+@media (min-width: 768px) {
+  .main-header .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .main-header .menu-toggle .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .main-header .menu-toggle .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  .main-header .menu-toggle .hamburger::before, .main-header .menu-toggle .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+  }
+  .main-header .menu-toggle .hamburger::before {
+    top: -6px;
+  }
+  .main-header .menu-toggle .hamburger::after {
+    bottom: -6px;
+  }
+  .main-header .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+  }
+  .main-header .nav-links.open {
+    transform: scaleY(1);
+  }
+  .main-header .nav-links li {
+    margin: 1rem 0;
+  }
+}/*# sourceMappingURL=Header.css.map */

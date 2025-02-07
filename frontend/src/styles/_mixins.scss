@@ -86,6 +86,6 @@
   @include transition;
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: #0056b3; // Zastąpiono darken($primary-color, 10%) na #0056b3
   }
 }

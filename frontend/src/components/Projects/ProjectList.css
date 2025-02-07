@@ -1,0 +1,38 @@
+.project-list {
+  padding: 2rem;
+}
+.project-list h2 {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+.project-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+.project-list .project-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.project-list .project-item h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+.project-list .project-item p {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-list ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .project-list ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}/*# sourceMappingURL=ProjectList.css.map */
